@@ -23,9 +23,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              session.setAttribute("login", name);
              //设置session过期时间
              session.setMaxInactiveInterval(10*60);
+             Cookie cName=new Cookie("username",name);
+             Cookie cPass=new Cookie("password",pwd);
+             cName.setMaxAge(60);//5分钟
+             cPass.setMaxAge(60);//5分钟
+             response.addCookie(cName);
+             response.addCookie(cPass);
+             
         }
         if (valid) {
-            request.getRequestDispatcher("newspages/admin.jsp")
+        		request.getRequestDispatcher("newspages/admin.jsp")
                 .forward(request,response);
         } else {
                 response.sendRedirect("index.jsp");

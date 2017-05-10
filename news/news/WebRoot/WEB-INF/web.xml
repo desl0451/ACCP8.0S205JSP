@@ -9,5 +9,6 @@
      <welcome-file>index.html</welcome-file>
      <welcome-file>index.htm</welcome-file>
      <welcome-file>index.jsp</welcome-file>
+     <!-- 可以设置多个欢迎页面 -->
   </welcome-file-list>
 </web-app>
