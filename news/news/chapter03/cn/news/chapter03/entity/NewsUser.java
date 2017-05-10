@@ -7,6 +7,11 @@ public class NewsUser implements Serializable {
 	private String uname;
 	private String upwd;
 
+	public NewsUser( String uname, String upwd) {
+		this.uname = uname;
+		this.upwd = upwd;
+	}
+
 	public int getUid() {
 		return uid;
 	}

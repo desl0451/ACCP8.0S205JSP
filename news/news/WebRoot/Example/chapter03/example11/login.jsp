@@ -9,36 +9,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>用户注册</title>
+    <title>用户登录s</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
   </head>
   
   <body>
-	 <form action="control.jsp" method="post" name="form1">
-	 	<table>
-	 		<tr>
-	 			<td>用户名:</td>
-	 			<td><input type="text" name="userName"/></td>
-	 		</tr>
-	 		<tr>
-	 			<td>输入登录密码:</td>
-	 			<td><input type="password" name="pwd"/></td>
-	 		</tr>
-	 		<tr>
-	 			<td>再次登录密码:</td>
-	 			<td><input type="password" name="validatepwd"/></td>
-	 		</tr>
-	 		<tr>
-	 			<td>注册:</td>
-	 			<td><input type="submit" value="注册"/></td>
-	 		</tr>
-	 	</table>
-	 </form>
+	<form action="" method="post" name="form1">
+		用户名:<input type="text" name="userName"/>
+		密码:<input type="password" name="pwd"/>
+		<input type="submit" value="登录"/>
+	</form>
   </body>
 </html>
