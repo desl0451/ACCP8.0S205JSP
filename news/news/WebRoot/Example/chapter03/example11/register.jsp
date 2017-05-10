@@ -35,8 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 			<td><input type="password" name="validatepwd"/></td>
 	 		</tr>
 	 		<tr>
-	 			<td>注册:</td>
-	 			<td><input type="submit" value="注册"/></td>
+	 			<td colspan="2"><input type="submit" value="注册"/></td>
 	 		</tr>
 	 	</table>
 	 </form>
