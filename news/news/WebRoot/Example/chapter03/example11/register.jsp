@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-	 <form action="control.jsp" method="post" name="form1">
+	 <form action="Example/chapter03/example11/control.jsp" method="post" name="form1">
 	 	<table>
 	 		<tr>
 	 			<td>用户名:</td>
