@@ -34,7 +34,7 @@
 		<table>
 			<tr>
 				<td>用户名:</td>
-				<td><input type="text" name="userName"
+				<td><input onblur="checkAll()" type="text" name="userName"
 					value='<%=request.getParameter("userName") == null ? "" : request.getParameter("userName")%>' /></td>
 			</tr>
 			<tr>

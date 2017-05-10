@@ -31,6 +31,7 @@
 		String name = request.getParameter("userName");
 		String pwd = request.getParameter("pwd");
 		String validatepwd = request.getParameter("validatepwd");
+		/*
 		if (name == null || name.equals("")) {
 			request.setAttribute("message", "用户名不能为空");
 			request.getRequestDispatcher("register.jsp").forward(request, response);
@@ -41,14 +42,16 @@
 			request.setAttribute("message", "两次输入的密码不致");
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 		} else {
-			NewsUser newsUser = new NewsUser(name, pwd);
-			int result = new NewsUserDaoImpl().insert(newsUser);
-			if (result > 0) {
-				response.sendRedirect("login.jsp");
-			} else {
-				request.getRequestDispatcher("register.jsp").forward(request, response);
-			}
+		*/
+		NewsUser newsUser = new NewsUser(name, pwd);
+		int result = new NewsUserDaoImpl().insert(newsUser);
+		if (result > 0) {
+			out.println("<script type='text/javascript'>alert('注册成功!马上登录.');location.href='Example/chapter03/example11/login.jsp';</script>");
+		} else {
+			request.setAttribute("message", "注册失败,请重新注册。");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
+		//}
 	%>
 </body>
 </html>
