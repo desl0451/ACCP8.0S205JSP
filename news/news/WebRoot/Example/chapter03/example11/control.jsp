@@ -30,12 +30,24 @@
 		request.setCharacterEncoding("UTF-8");
 		String name = request.getParameter("userName");
 		String pwd = request.getParameter("pwd");
-		NewsUser newsUser = new NewsUser(name, pwd);
-		int result = new NewsUserDaoImpl().insert(newsUser);
-		if (result > 0) {
-			response.sendRedirect("login.jsp");
-		} else {
+		String validatepwd = request.getParameter("validatepwd");
+		if (name == null || name.equals("")) {
+			request.setAttribute("message", "用户名不能为空");
 			request.getRequestDispatcher("register.jsp").forward(request, response);
+		} else if (pwd == null || pwd.equals("")) {
+			request.setAttribute("message", "密码不能为空");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+		} else if (!validatepwd.equals(pwd)) {
+			request.setAttribute("message", "两次输入的密码不致");
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+		} else {
+			NewsUser newsUser = new NewsUser(name, pwd);
+			int result = new NewsUserDaoImpl().insert(newsUser);
+			if (result > 0) {
+				response.sendRedirect("login.jsp");
+			} else {
+				request.getRequestDispatcher("register.jsp").forward(request, response);
+			}
 		}
 	%>
 </body>
